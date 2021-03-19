@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>N.A.S.A. Missions</title>
+    <link th:href="@{/styles.css}" rel="stylesheet" />
+</head>
+<body>
+<h2 th:text="'There are ' + ${count} + ' N.A.S.A. Missions.'"></h2>
+<table>
+    <thead>
+    <tr>
+        <th>Mission Name</th>
+        <th>From Year</th>
+        <th>First Crewed Flight</th>
+        <th>End Year</th>
+        <th>Manned Flights</th>
+        <th>Notes</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="item : ${missions}">
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.fromYear}" class="st"></td>
+            <td th:text="${item.mannedYear}" class="st"></td>
+            <td th:text="${item.thruYear}" class="st"></td>
+            <td th:text="${item.flights}" class="st"></td>
+            <td th:text="${item.notes}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

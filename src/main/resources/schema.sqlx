@@ -1,0 +1,12 @@
+use nasamissions;
+drop table missions if exists;
+create table missions (
+    id bigint not null auto_increment,
+    name varchar(50) not null,
+    from_year smallInt not null,
+    manned_year smallint not null,
+    thru_year smallint not null,
+    flights smallint not null,
+    notes varchar(255),
+    primary key (id)
+);
